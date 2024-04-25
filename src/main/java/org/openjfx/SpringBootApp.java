@@ -8,11 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootApp {
 
     public static void main(String[] args) {
-        // Create a thread for running SpringApplication.run
       Thread springThread = new Thread(() -> SpringApplication.run(SpringBootApp.class, args));
-      springThread.start();
 
-      Application.launch(JavaFxApp.class, args);
+      // Create a thread for running Application.launch
+      Thread javaFxThread = new Thread(() -> Application.launch(JavaFxApp.class, args));
+
+      // Start both threads
+      springThread.start();
+      javaFxThread.start();
 
 
     }
