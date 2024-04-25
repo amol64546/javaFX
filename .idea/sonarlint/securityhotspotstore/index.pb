@@ -27,3 +27,7 @@ _
 /src/main/java/org/openjfx/StageInitializer.java,7/0/706ab589ee1376985beea41864f0fa5b6ce58ed1
 ^
 .src/main/java/org/openjfx/StageReadyEvent.java,0/1/01e87bdb1746bdfe7b05e8eed31ea63e4a56caa7
+]
+-src/main/java/org/openjfx/FXMLController.java,e/b/eb6245199ce6c30a211bdd116c8ac81938fd7a0b
+X
+(src/main/java/org/openjfx/JavaFxApp.java,a/2/a2d2b5c727afc2c395a1be06574b72851334b5b9
