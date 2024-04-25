@@ -9,7 +9,7 @@
 ls
 pwd
 
-systemctl status mongod
+#systemctl status mongod
 
 
 

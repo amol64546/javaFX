@@ -1,3 +1,4 @@
-.label {
-    -fx-text-fill: blue;
+#consoleTextArea{
+    -fx-control-inner-background: black;
+    -fx-text-fill: white;
 }
