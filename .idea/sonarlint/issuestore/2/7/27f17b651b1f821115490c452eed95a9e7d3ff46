@@ -1,8 +1,0 @@
-
-	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(á„‹ÿÿÿÿÿ8şäº¯ñ1J$08bbd5e4-769c-48d9-a2cf-6a162b1c1ca7
-ˆ	java:S112;"FDefine and throw a dedicated exception instead of using a generic one.(üç‹ã8Ğ£»¯ñ1J$691f2043-97f8-46e6-9104-b5554cca09b9
-¦
-java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(üÍ”ûÿÿÿÿ8¶Ø°¯ñ1J$d7c9159a-9ca8-432c-91f7-b8605dcc2108
-o
-java:S1874",Remove this use of "exec"; it is deprecated.(‹§8»Ø°¯ñ1J$3cf7e9d8-babd-4e6d-bff8-a017d0129209
-ƒ	java:S1255"<This block of commented-out lines of code should be removed.(œ‡‘ˆùÿÿÿÿ8ŠÊØ°ñ1J$80aab788-e0d1-4b5c-ab80-ddeebe6cbe26
