@@ -10,12 +10,10 @@ echo "$password" | sudo -S apt update
 echo "$password" | sudo -S apt install postgresql
 
 # Access psql as the postgres user and run SQL commands
-echo "$password" | sudo -S -u postgres psql -d template1 -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'your_password';"
+echo "$password" | sudo -S -u postgres psql -d template1 -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'root';"
 
 # Restart PostgreSQL service
 echo "$password" | sudo -S systemctl restart postgresql.service
-
-
 
 postgres_version=$(psql --version)
 echo "PostgreSQL has been installed and configured."

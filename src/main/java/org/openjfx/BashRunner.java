@@ -12,10 +12,10 @@ import javafx.scene.control.TextArea;
 import static org.openjfx.ScriptPaths.TEST;
 
 
-public class ScriptUtils
+public class BashRunner
 {
 
-    private static final Logger log = Logger.getLogger(ScriptUtils.class.getName());
+    private static final Logger log = Logger.getLogger(BashRunner.class.getName());
 
 
     public void setExecutePermissions(String scriptPath){
@@ -50,7 +50,7 @@ public class ScriptUtils
             String line;
             while ((line = reader.readLine()) != null)
             {
-//                System.out.println(line);
+                System.out.println(line);
                 appendText(line);
             }
 
