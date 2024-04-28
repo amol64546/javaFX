@@ -5,13 +5,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.ScriptUtils">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.BashRunner">
    <children>
-      <Button fx:id="myButton" layoutX="229.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="60.0" prefWidth="143.0" text="\$test">
+      <Button fx:id="testButton" layoutX="47.0" layoutY="31.0" mnemonicParsing="false" onAction="#runTestScript" prefHeight="36.0" prefWidth="94.0" text="Test">
          <font>
-            <Font size="26.0" />
+            <Font size="19.0" />
          </font>
       </Button>
       <TextArea fx:id="consoleTextArea" layoutX="9.0" layoutY="110.0" prefHeight="284.0" prefWidth="582.0" stylesheets="@styles.css" />
+      <Button fx:id="clearButton" layoutX="399.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleClearButtonClick" prefHeight="42.0" prefWidth="114.0" text="Clear" />
+      <Button fx:id="testButton1" layoutX="179.0" layoutY="31.0" mnemonicParsing="false" onAction="#installRedis" prefHeight="36.0" prefWidth="165.0" text="Install Redis">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
