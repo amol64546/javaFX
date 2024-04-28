@@ -1,8 +1,6 @@
 package org.openjfx;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Logger;
@@ -10,10 +8,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
-import org.apache.commons.exec.CommandLine;
-import org.apache.commons.exec.DefaultExecutor;
-import org.apache.commons.exec.ExecuteException;
-import org.apache.commons.exec.PumpStreamHandler;
 
 import static org.openjfx.ScriptPaths.INSTALL_REDIS;
 import static org.openjfx.ScriptPaths.TEST;
@@ -40,52 +34,6 @@ public class BashRunner {
 
   }
 
-  public void apacheRunner(String bashScript) {
-    setExecutePermissions(bashScript);
-    try {
-      CommandLine cmdLine = CommandLine.parse(bashScript);
-      DefaultExecutor executor = new DefaultExecutor();
-
-      // Create a ByteArrayOutputStream to capture the output
-      ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-      PumpStreamHandler streamHandler = new PumpStreamHandler(outputStream);
-      executor.setStreamHandler(streamHandler);
-
-      executor.setExitValue(0);  // Optionally set the exit value
-
-      // Execute the command in a background thread
-      Thread executorThread = new Thread(() -> {
-        try {
-          executor.execute(cmdLine);
-
-          // Read the output line by line
-          try (BufferedReader reader = new BufferedReader(
-            new InputStreamReader(new ByteArrayInputStream(outputStream.toByteArray())))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-              final String outputLine = line;
-              if (outputLine.startsWith("echo")) { // Check if line starts with "echo"
-                String finalLine = outputLine;
-                Platform.runLater(() -> appendText(finalLine.substring(5)));
-                System.out.println("Output of the script:\n" + outputLine);
-
-              }
-            }
-          }
-        } catch (ExecuteException e) {
-          // Handle execution errors
-          e.printStackTrace();
-        } catch (IOException e) {
-          // Handle IO errors
-          e.printStackTrace();
-        }
-      });
-      executorThread.start();
-    } catch (Exception e) {
-      // Handle any other exceptions
-      e.printStackTrace();
-    }
-  }
 
   public void runner(String scriptPath) {
     setExecutePermissions(scriptPath);
